@@ -1,0 +1,1051 @@
+/*set all font for sans-serif and Poppins*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+/*define background color*/
+:root {
+  --bg-color:black;
+  /*define secondary background color*/
+  --second-bg-color:darkgreen;
+  /*define second background color*/
+  --second-bg-bg-color: #ededed;
+  /*main color*/
+  --main-color:rgb(87, 255, 87);
+}
+/*set font size to 62.5% for easy rem calculation*/
+html {
+font-size: 62.5%;
+  /*Prevent horizontal scrollbar from appearing*/
+  overflow-x: hidden;
+}
+
+body {
+  /*set background color using css variable*/
+  background: var(--bg-color);
+  color: var(--text-color);
+  /*text color to white*/
+  color: white;
+}
+/*Position element relative to viewport*/
+.header {
+  position: fixed;
+  /*set top and left coordinates*/
+  top: 0;
+  left: 0;
+  /*set full width*/
+  width: 100%;
+  /*Add padding for content*/
+  padding: 2rem 9%;
+  background: transparent;
+  /*display as flex container*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*set high  z-index for overlap*/
+  z-index: 100;
+  /*Add transition effect*/
+  transition: .3s;
+}
+/* Set background to value of --bg-color */
+.header .sticky{
+  background:var(--bg-color);
+
+}
+/* Logo styling with font-size, color, and font-weight */
+.logo {
+  position: relative; /* Position relative to its normal position */
+  font-size: 2.5rem;/* Font size of 2.5 times the root font size */
+  color: var(--text-color); /* Color from the text-color variable */
+  font-weight: 600; /* Font weight of 600 (semi-bold) */
+}
+.navbar{
+    /* Set navbar position to relative value */
+  position: relative;
+}
+
+.navbar a {
+  /* Define style for links in navbar */
+  font-size: 1.7rem;  /* Adjust font size */
+  color: var(--text-color);
+  font-weight: 500; /* Set font weight */
+  margin-left: 3.5rem;; /* Set left margin */
+  transition: .3s;/* Add transition effect */
+}
+/*hover effect  to navbar links*/
+.navbar a:hover,
+/*active state for current page lin*/
+.navbar a.active {
+  /*set main color to hovered/active links*/
+  color: var(--main-color);
+}
+/* Position relative for menu icon */
+#menu-icon {
+  position: relative;
+  font-size: 3.6rem;
+    /* Color for menu icon */
+  color: var(--text-color);
+/* Cursor style for menu icon */
+  cursor: pointer;
+    /* Display property for menu icon */
+  display: none;
+}
+/* Section minimum height and padding */
+section {
+  min-height: 100vh;/* Minimum height equal to viewport */
+  padding: 10rem 9% 2rem; /* Top, horizontal, and bottom padding */
+}
+/* Home container styles */
+.home {
+  display: flex;
+  align-items: center;
+  margin: 0 9%;
+  /* Set background image and adjust its size and position */
+  background: url('img/T.jpg') no-repeat;
+  background-size: cover;
+  background-position: left;
+  
+}
+
+.home-content {
+    /* Set maximum width to 60rem */
+  max-width: 60rem;
+  /* Set z-index to 99 for stacking */
+  z-index: 99;
+}
+/*font  size and weight for heading*/
+.home-content h1 {
+  position: relative; /* Keep position relative for future use */
+  display: inline-block; /* Display heading as inline-block */
+  font-size: 5.6rem;/* Set font size to 5.6rem */
+  font-weight: 700; /* Set font weight to 700 (bold) */
+  line-height: 1.3;/* Set line height to 1.3 */
+}
+
+/* Change color of h1 span elements */
+.home-content h1 span{
+  color: var(--text-color);
+}
+/*position is relative to its normal position*/
+.home-content .text-animate {
+  position: relative;
+  /*width is set to 32.8rem*/
+  width: 32.8rem;
+}
+
+.home-content .text-animate h2 {
+  font-size: 3.2rem;; /* font size */
+  font-weight: 700; /* font weight */
+  color: transparent;/* text color */
+  --webkit-text-stroke: .7px var(var(--main-color)); /* text stroke */
+  
+  /* Background image is a linear gradient of main color */
+  background-image: linear-gradient(var(--main-color), var(--main-color));
+    /* Background repeats and is clipped to text */
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-position: -33rem 0;
+    /* Animation is homeBgText, lasting 6s, linear, and infinite */
+  animation: homeBgText 6s linear infinite;
+  
+  /* Animation delay of 2s */
+  animation-delay: 2s;
+}
+  /* Add empty content to pseudo element */
+.home-content .text-animate h2::before{
+  content: '';
+  position: absolute;
+   /* Set top and left to 0 */
+  top: 0;
+  left: 0;
+   /* Set width to 0 */
+  width: 0;
+  /* Set height to 100% */
+  height: 100%;
+   /* Add border right with main color */
+  border-right: 2px solid var(--main-color);
+  /* Send pseudo element behind parent */
+  z-index: -1;
+    /* Animate pseudo element with homeCursorText */
+  animation: homeCursorText 6s linear infinite;
+  /* Delay animation by 2 seconds */
+  animation-delay:2s;
+}
+/* Font size and margin for.text-animate p */
+.home-content .text-animate p {
+  position: relative; /* Position relative to its normal position */
+  font-size: 1.6rem;
+  margin: 2rem 0 4rem; /* Margin top, bottom and 0 for left and right */
+}
+/* Container for buttons */
+.btn-box {
+    /* Position and display properties */
+  position: relative;
+  display: flex;
+   /* Justify content to space between */
+  justify-content: space-between;
+    /* Set width and height */
+  width: 34.5rem;
+  height: 5rem;
+}
+/* Button style */
+.btn-box .btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 100%;
+  background: var(--bg-color);
+  border: .2rem solid var(--bg-color);
+  border-radius: .8rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  color: var(--main-color);
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+
+
+}
+.btn-box .btn:hover{
+    color: var(--main-color);
+}
+.btn-box .btn:nth-child(2){
+    background: transparent;
+    background-color: var(--bg-color);
+}
+.btn-box .btn:nth-child(2):hover{
+    color: var(--bg-color);
+}
+.btn-box .btn:nth-child(2)::before{
+    background: dark;
+}
+.btn-box .btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background:rgb(47, 225, 47);
+    z-index: -1;
+    transition: .5s;
+}
+.btn-box .btn:hover::before{
+  width: 100%;
+}
+
+.home-sci{
+    position: absolute;
+    bottom: 4rem;
+    width: 170px;
+    display: flex;
+    justify-content: space-around;
+
+}
+.home-sci a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 90%;
+    font-size: 20px;
+    color: var(--main-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.home-sci a:hover{
+  color: var(--bg-color);
+}
+.home-sci a::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--main-color);
+  z-index: -1;
+  transition: .5s;
+}
+.home-sci a:hover::before{
+
+  width: 100%;
+}
+.home-imgHover{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  background: transparent;
+transition: .3s;
+}
+.home-imgHover:hover{
+  background-color: var(--bg-color);
+  opacity: .8;
+}
+.aboutMe{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: black;
+  padding-bottom: 6rem;
+}
+.heading{
+  position: relative;
+  display: inline-block;
+  font-size: 5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+span{
+  color: var(--main-color);
+}
+.about-img{
+  padding: relative;
+  width: 25rem;
+  height: 25rem;
+  border-radius:50% ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-img img{
+  width: 90%;
+  border-radius: 50%;
+  border: .2rem solid var(--main-color);
+ 
+}
+  .about-img .circle-spin{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)rotate(0);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border-top: .2rem solid var(--second-bg-bg-color);
+  border-bottom: .2rem solid var(--second-bg-bg-color);
+  border-left: .2rem var(--main-color);
+  border-right: .2rem solid var(--main-color);
+  animation: aboutSpinner 8s linear infinite;
+}
+.about-content{
+  text-align: center;
+
+}
+.about-content h3{
+  position: relative;
+  display: block;
+  font-size: 2.6rem;
+}
+.about-content p{
+  position: relative;
+  font-size:1.6rem;
+  margin: 2rem 0 3rem;
+}
+.btn-box .btns{
+  display: inline-block;
+  width: 15rem;
+}
+.btn-box.btns a::before{
+  background: green;
+}
+.education{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: auto;
+  padding-bottom: 5rem;
+
+}
+ .education .education-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+
+
+}
+.education-row  .education-column{
+  flex: 1 1 40rem;
+
+}
+.education-column .title{
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+  margin: 0 0 1.5rem 2rem;
+}
+.education-column .education-box{
+  position: relative;
+  border-left: .2rem solid var(--main-color);
+}
+.education-box .education-content{
+  position: relative;
+  padding-left: 2rem;
+}
+/* Adds content before education-content class */
+.education-box .education-content::before{
+  content: '';
+  /* Sets position to absolute */
+  position: absolute;
+   /* Positions content at top left of education-content */
+  top: 0;
+  left: -1.1rem;
+  /*set width and height to 2rem*/
+  width: 2rem;
+  height: 2rem;
+  /*sets background color to main-color variable*/
+  background-color: darkgreen;
+  /*rounds corners to create circle*/
+  border-radius: 50% ;
+}
+/*define class education-content and content*/
+.education-content .content{
+  /*ADD position to relative*/
+  position: relative;
+  /*add padding 1.5rem*/
+  padding: 1.5rem;
+  border: .2rem solid var(--main-color);
+  /*Add border-radius .6rem*/
+  border-radius: .6rem;
+  /*Add margin-bottom 2rem*/
+  margin-bottom: 2rem;
+  /*Add overflow hidden*/
+  overflow: hidden;
+
+}
+/*set content empty string*/
+.education-content .content::before{
+  content: ' ';
+  /*Position absolute*/
+  position: absolute;
+  /*top 0, left 0*/
+  top: 0;
+  left: 0;
+  /*set width to 0 , and height to 100%*/
+  width: 0;
+  height: 100%;
+  /*background color green*/
+  background:rgb(4, 152, 4);
+  z-index: -1;
+  /*transation to 0.5s*/
+  transition: 0.5s;
+}
+/*target education content*/
+
+.education-content .content:hover::before{
+  /*set the width to full*/
+  width: 100%;
+}
+.education-content .content .year{
+  font-size: 1.5rem;
+  color: darkgreen;
+  padding-bottom: .5rem;
+}
+/*Target education content container and year*/
+.education-content .content .year i{
+  padding-right: .5rem;
+}
+/*set font size to 2rem*/
+.education-content .content h3{
+  font-size: 2rem;
+
+}
+/*set font size for paragraphs in.education-content*/
+.education-content .content p{
+  font-size: 1.6rem;
+  /*Add padding to the top of paragraphs*/
+  padding-top: .5rem;
+}
+/*Projet section styling*/
+.Project{
+  padding: 50px 0;
+  text-align: center;
+  background: var(--bg-color);
+}
+
+.Project .Title{
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.Project  .video-container{
+  perspective: 1000px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  transition: transform 0.5s
+  
+}
+
+.Project .video-container video{
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border: 2px solid rgb(0, 255, 17);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(0,0,0,0.1);
+}
+
+@keyframes rotate{
+  from{
+    transform: rotateY('0deg');
+  }
+  to{
+    transform: rotateY('360deg');
+  }
+}
+.video-container video:hover{
+  transform: scale(1.1);
+}
+/* Setting minimum height and padding for.design */
+.design{
+  min-height: auto;
+  padding-bottom: 7rem;
+  /* Applying background color to.design */
+  background:dark;
+}
+.design h2{
+  /* Display heading inline-block */
+  display: inline-block;
+    /* Position heading relative to its normal position */
+  position: relative;
+   /* Move heading left by 50% of its parent container */
+  left: 50%;
+    /* Move heading right by half of its own width */
+  transform: translateX(-50%);
+
+  
+}
+/* Define a class named 'design' with a child class 'skills-row' */
+.design .skills-row{
+  /* Display the elements in a flex container */
+  display: flex;
+    /* Allow elements to wrap to the next line if there's not enough space */
+  flex-wrap: wrap;
+    /* Add a gap between the flex items */
+  gap: 5rem;
+}
+.skills-row .skills-column{
+   /* Set flex-grow, flex-shrink, and flex-basis properties */
+  flex: 1 1 40rem;
+  /* Flex-basis value is set to 40rem */
+}
+/* Set font size for title in skills column */
+.skills-column .title{
+  font-size: 2.5rem;
+  margin: 0 0 1.5rem;
+}
+/* Define class for skills box and content */
+.skills-box .skills-content{
+  position: relative;
+  border: .2rem solid dark;
+  border-radius: .6rem;
+  padding: .5rem 1.5rem;
+  z-index: 1;
+  overflow: hidden;
+}
+/* Defines a pseudo-element before the.skills-content element */
+.skills-box .skills-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background:rgb(49, 168, 49);
+  z-index: -1;
+  transition:.5s ;
+}
+
+.skills-box .skills-content:hover::before {/* Change width on hover */
+width: 100%; /* Set width to 100% on hover */
+}
+.skills-content .progress{
+  /* Add padding to progress bars */
+  padding: 1rem 0;
+}
+/* Define class.skills-content.progress h3 */
+.skills-content .progress h3{
+  font-size: 1.7rem;
+  
+  /* Use flexbox to align content */
+  display: flex;
+  
+  /* Add space between items */
+  justify-content: space-between;
+}
+/* Changes the color of the span element in the progress h3 of skills-content */
+.skills-content .progress h3 span{
+  color: var(--text-color);
+}
+/* Defining the class skills-content.progress.bar */
+.skills-content .progress .bar{
+  height: 2.5rem;
+  border-radius: .6rem;
+  border: .2rem solid var(--main-color);
+  padding: .5rem;
+  margin: 1rem 0;
+}
+/* Style for the progress bar span */
+.skills-content .progress .bar span{
+  display: block;
+  height: 100%;
+  border-radius: .3rem;
+  background:darkgreen;
+}
+/* Select the first skills column */
+.skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span{
+  width: 90%;
+
+}
+.skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span{
+  width: 85%;
+  
+}
+.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span{
+  width: 75%;
+  
+}
+.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span{
+  width: 78%;
+  
+}
+/* selects the 2nd skills column */
+.skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span{
+  width: 90%;
+  
+}
+.skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span{
+  width: 85%;
+  
+}
+.skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span{
+  width: 90%;
+  
+}
+.skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span{
+  width: 75%;
+  
+}
+.contact{
+  min-height: auto;
+  padding-bottom: 7rem;
+}
+.contact form{
+  max-width: 70rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.contact form .input-box{
+  position: relative;
+  display: flex;
+  justify-content:space-between ;
+  flex-wrap: wrap;
+}
+.contact form .input-box .input-field{
+  position: relative;
+  width: 49%;
+  margin: .8rem 0;
+}
+.contact form .input-box .input-field input,
+.contact form .textarea-field textarea{
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  background: transparent;
+  border-radius: .4rem;
+  border: .2rem solid var(--main-color);
+}
+/* Set placeholder text color for input and textarea */
+.contact form .input-box .input-field input::placeholder,
+.contact form .textarea-field textarea::placeholder{
+  color:var(--text-color) ;
+}
+.contact form .focus{
+  /* Position of the focus element */
+  position: absolute;
+  /* Top position of the focus element */
+  top: 0;
+  
+/* Left position of the focus element */
+  left: 0;
+/* Width of the focus element */
+  width: 0;
+  /* Height of the focus element */
+  height: 100%;
+  
+/* Background color of the focus element */
+  background:green;
+  
+/* Border radius of the focus element */
+  border-radius: .6rem;
+  /*z-index of the focus element*/
+  z-index: -1;
+  
+/* Transition of the focus element */
+  transition: .5s;
+}
+
+/* Add focus style when input is focused or valid */
+.contact form .input-box .input-field input:focus~.focus,
+.contact form .input-box .input-field input:valid~.focus,
+/* Add focus style when textarea is focused or valid */
+.contact form .textarea-field textarea:focus~.focus,
+.contact form .textarea-field textarea:valid~.focus{
+width: 100%;
+
+}
+.contact form .textarea-field{
+    /* Set position to relative */
+  position: relative;
+  /* Add margin top and bottom */
+  margin: .8rem 0 2.7rem;
+  /* Display as flexbox */
+  display: flex;
+}
+
+
+/* Disable textarea resizing */
+.contact form .textarea-field textarea{
+  resize: none;
+}
+/* Style for the form button */
+.contact form .btn-box.btns .btn{
+  cursor: pointer;/* Change cursor to pointer on hover */
+}
+
+/* Footer styling with flexbox */
+.footer{  /* Display as flex container */
+  display: flex;
+  /* Justify content with space between */
+  justify-content: space-between;
+    /* Align items in center */
+  align-items: center;
+  /* Allow flex items to wrap */
+  flex-wrap: wrap;
+   /* Add padding to footer */
+  padding: 2rem 9%;
+    /* Set background color */
+  background:var(--second-bg-color);
+}
+/* Set font size for paragraph in footer */
+.footer-text p{
+  font-size: 1.6rem;
+}
+/* Class selector for footer icon top */
+.footer-iconTop a{
+  /* Position relative to its normal position */
+  position: relative;
+    /* Display as inline-flex */
+  display: inline-flex;
+    /* Justify content to center */
+  justify-content: center;
+    /* Align items to center */
+  align-items: center;
+  /* Padding for space around */
+  padding: .8rem;
+   /* Background color */
+  background: var(--main-color);
+  /* Border properties */
+  border: .2rem solid var(--main-color);
+  border-radius: .6rem;
+  /* Set z-index for layering */
+  z-index: 1;
+  /* Hide overflow content */
+  overflow: hidden;
+
+}
+/* Adds content before.footer-iconTop a */
+.footer-iconTop a::before{
+   /* Sets position to absolute */
+  content: "";
+  position: absolute;
+  /* Positions at top left of.footer-iconTop a */
+  top: 0;
+  left: 0;
+  width: 0;
+    /* Sets width and height to 0 */
+  height: 100%;
+  /* Sets background color */
+  background:darkgreen;
+   /* Sets z-index to -1 */
+  z-index: -1;
+    /* Sets transition time to.5s */
+  transition: .5s;
+
+}
+
+.footer-iconTop a:hover::before{ /* style pseudo element on hover */
+width: 100%;/* set width to full */
+}
+
+.footer-iconTop a i{
+    /* Set font size for icon */
+  font-size: 2.4rem;
+    /* Set color from variable */
+  color: var(--bg-color);
+    /* Set color from variable */
+  transition: .5s;
+}
+/* Hover effect on footer icon top anchor tag */
+.footer-iconTop a:hover i{
+   /* Change icon color to main color */
+  color: var(--main-color);
+}
+/* Adjust width of.home-img when inside.animate */
+.animate .home-img{
+width: 50%;/* Set width to 50% */
+}
+.logo .animate,
+.navbar .animate,
+#menu-icon .animate,
+.home .show-animate .animate{
+  animation: showRight 1s ease forwards;
+  animation-delay: calc(.3s*var(--i));
+}
+
+/* Add animation to education-box on scroll */
+.education .education-box .animate.scroll{
+  width: 105%; /* Increase width by 5% */
+}
+.about.show-animate .animate.animate.scroll,
+.education .show-animate .animate.animate.scroll,
+/* Define animation delay based on element's index */
+.design.show-animate.animate.scroll
+{
+  animation-delay: calc(.3s*var(--i));
+    /* Initially set width to 0 */
+  width: 0; 
+}
+/*breakpoints*/
+@media (max-width: 1200px){
+  html{
+    font-size: 55%;
+
+  }
+}
+@media (max-width: 991px) {
+  .header{
+    padding: 2rem 4%;
+
+
+  }
+  section{
+    padding: 10rem 4% 2rem;
+  }
+  .home{
+    padding: 0 4%;
+  }
+  .footer{
+    padding: 2rem 4%;
+  }
+}
+@media (max-width: 768px){
+  .header{
+  background: var(--bg-color);
+  }
+  #menu-icon{
+    display: block;
+
+  }
+  .navbar{
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    width: 100%;
+    padding: 1rem 4%;
+    background: var(--main-color);
+    box-shadow: 0 .5rem 1rem rgb(0,0,0,.2);
+    z-index: 1;
+    transition: .25s ease;
+    transition-delay: .25s;
+   
+  }
+  .navbar .active{
+    left: 0;
+    transition-delay: 0s;
+  }
+  .navbar .active-nav{
+    position: absolute;
+    top: 0;
+    left:-100;
+    width: 100%;
+    height: 100%;
+    background: yellowgreen;
+    border-top: .1rem solid rgb(0,0,0,.2);
+    z-index: -1;
+    transition: .25s ease;
+    transition-delay: 0s;
+  }
+  .navbar .active .active-nav{
+    left: 0;
+    transition-delay: .25s;
+  }
+  .navbar a{
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+    transform: translateX(-20rem);
+    transition: .25s ease;
+    transition-delay:0s ;
+  }
+  .navbar .active a{
+    transform: translateX(0);
+    transition-delay: .25s;
+  }
+  .home-imgHover{
+    pointer-events: none;
+    background: var(--bg-color);
+    opacity: .6;
+  }
+}
+@media (max-width:520px){
+  html{
+    font-size: 50%;
+  }
+  .home-content h1{
+    display: flex;
+    flex-direction: column;
+
+  }
+  .home-sci{
+    width: 160px;
+  }
+  .home-sci a{
+    width: 38px;
+    height: 38px;
+
+  }
+  
+}
+
+@media (max-width:462px){
+  .home-content h1{
+    font-size: 5.2rem;
+
+  }
+  .education{
+    padding: 10rem 4% 5rem 5%;
+  }
+  .contact form .input-box .input-field{
+    width: 100%;
+  }}
+  
+  .certification{
+    /**/
+    padding: 50px 0;
+    background-color:var(--bg-color);
+    text-align: center;
+    
+  }
+  .certification .heading{
+    font-size: 36px;
+    font-weight: 700;
+    color:white;
+    margin-bottom: 50px;
+  }
+  .certification .img{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+  }
+  .certification .img img{
+    width: 200px;/*Adjust the width as needed*/
+    height: 200px;/*set the height */
+    object-fit: cover;/*this ensure image covers the container*/
+    margin: 20px;/*adjust spacing between image*/
+    border-radius: 10px;/*optional add border radius for rounded corners*/
+  }
+  
+
+
+  
+  .footer{
+    
+    flex-direction: column-reverse;
+  }
+  .footer p{
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+@media (max-width:371px) {
+  .home{
+    justify-content: center;
+  }
+  .home-content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+  }
+  .home-content h1{
+    font-size: 5rem;
+  }
+}
+/*keyframes animation*/
+@keyframes homeBgText{
+   /* start position */
+  0%,10%,100%{
+    background-position: -33rem 0;
+  }
+    /* end position */
+  65%,85%{
+    background-position: 0 0;
+  }
+}
+
+@keyframes homeCursorText{
+  /* Initial state */
+  0%,10%,100%{
+    width: 0;
+  }
+  
+  /* Expanding width */
+  65%,78%,85%{
+    width: 100%;
+    opacity: 1;
+  }
+    /* Blinking effect */
+  75%,81%{
+    opacity: 1;
+  }
+}
+@keyframes aboutSpinner{
+   /* Animation for spinner */
+  100%{
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+}
+@keyframes showRight{/* Defines the animation 'showRight' */
+  100%{/* Applies to the last frame of the animation */
+    width: 0;/* Sets the width to 0 at the end of the animation */
+  }
+} 
