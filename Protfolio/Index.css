@@ -13,11 +13,11 @@
 :root {
   --bg-color:black;
   /*define secondary background color*/
-  --second-bg-color:darkgreen;
+  --second-bg-color:rgb(38, 38, 38);
   /*define second background color*/
-  --second-bg-bg-color: #ededed;
+  --second-bg-bg-color: white;
   /*main color*/
-  --main-color:rgb(87, 255, 87);
+  --main-color:#040404;
 }
 /*set font size to 62.5% for easy rem calculation*/
 html {
@@ -62,7 +62,8 @@ body {
 .logo {
   position: relative; /* Position relative to its normal position */
   font-size: 2.5rem;/* Font size of 2.5 times the root font size */
-  color: var(--text-color); /* Color from the text-color variable */
+  color:white;
+  text-shadow: #282623;
   font-weight: 600; /* Font weight of 600 (semi-bold) */
 }
 .navbar{
@@ -107,7 +108,7 @@ section {
   align-items: center;
   margin: 0 9%;
   /* Set background image and adjust its size and position */
-  background: url('img/T.jpg') no-repeat;
+  background: url('img/2.JPG') no-repeat;
   background-size: cover;
   background-position: left;
   
@@ -126,11 +127,12 @@ section {
   font-size: 5.6rem;/* Set font size to 5.6rem */
   font-weight: 700; /* Set font weight to 700 (bold) */
   line-height: 1.3;/* Set line height to 1.3 */
+  color: rgb(107, 104, 104);
 }
 
 /* Change color of h1 span elements */
 .home-content h1 span{
-  color: var(--text-color);
+  color: rgb(107, 104, 104);
 }
 /*position is relative to its normal position*/
 .home-content .text-animate {
@@ -146,7 +148,7 @@ section {
   --webkit-text-stroke: .7px var(var(--main-color)); /* text stroke */
   
   /* Background image is a linear gradient of main color */
-  background-image: linear-gradient(var(--main-color), var(--main-color));
+  background-image: linear-gradient(var(--main-color), #484141);
     /* Background repeats and is clipped to text */
   background-repeat: no-repeat;
   -webkit-background-clip: text;
@@ -179,9 +181,11 @@ section {
 }
 /* Font size and margin for.text-animate p */
 .home-content .text-animate p {
+  color: #484141;
   position: relative; /* Position relative to its normal position */
   font-size: 1.6rem;
   margin: 2rem 0 4rem; /* Margin top, bottom and 0 for left and right */
+  
 }
 /* Container for buttons */
 .btn-box {
@@ -202,13 +206,13 @@ section {
   align-items: center;
   width: 15rem;
   height: 100%;
-  background: var(--bg-color);
-  border: .2rem solid var(--bg-color);
+  background: black;
+  border: .2rem solid white;
   border-radius: .8rem;
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: .1rem;
-  color: var(--main-color);
+  color: gray;
   z-index: 1;
   overflow: hidden;
   transition: .5s;
@@ -235,7 +239,7 @@ section {
     left: 0;
     width: 0;
     height: 100%;
-    background:rgb(47, 225, 47);
+    background:rgb(32, 30, 30);
     z-index: -1;
     transition: .5s;
 }
@@ -305,7 +309,7 @@ transition: .3s;
   align-items: center;
   flex-direction: column;
   gap: 2rem;
-  background-color: black;
+  background-color:black;
   padding-bottom: 6rem;
 }
 .heading{
@@ -316,7 +320,7 @@ transition: .3s;
   text-align: center;
 }
 span{
-  color: var(--main-color);
+  color: gray;
 }
 .about-img{
   padding: relative;
@@ -366,7 +370,7 @@ span{
   width: 15rem;
 }
 .btn-box.btns a::before{
-  background: green;
+  background: #B9B8B6;
 }
 .education{
   display: flex;
@@ -375,17 +379,21 @@ span{
   flex-direction: column;
   min-height: auto;
   padding-bottom: 5rem;
+  border: 1px solid black;
 
 }
- .education .education-row{
+
+.education .education-row{
   display: flex;
   flex-wrap: wrap;
   gap: 5rem;
+  border: 1px solid black;
 
 
 }
 .education-row  .education-column{
   flex: 1 1 40rem;
+  border: 1px solid black;
 
 }
 .education-column .title{
@@ -396,12 +404,15 @@ span{
 }
 .education-column .education-box{
   position: relative;
-  border-left: .2rem solid var(--main-color);
+  border-left: .2rem solid #525252;
 }
 .education-box .education-content{
   position: relative;
-  padding-left: 2rem;
+  padding-left: 0.5rem;
+  border: 1px solid black;
 }
+
+
 /* Adds content before education-content class */
 .education-box .education-content::before{
   content: '';
@@ -414,7 +425,7 @@ span{
   width: 2rem;
   height: 2rem;
   /*sets background color to main-color variable*/
-  background-color: darkgreen;
+  background-color: #DAD9D8;
   /*rounds corners to create circle*/
   border-radius: 50% ;
 }
@@ -424,7 +435,7 @@ span{
   position: relative;
   /*add padding 1.5rem*/
   padding: 1.5rem;
-  border: .2rem solid var(--main-color);
+  border: .2rem solid #525252;
   /*Add border-radius .6rem*/
   border-radius: .6rem;
   /*Add margin-bottom 2rem*/
@@ -445,7 +456,7 @@ span{
   width: 0;
   height: 100%;
   /*background color green*/
-  background:rgb(4, 152, 4);
+  background:#282623;
   z-index: -1;
   /*transation to 0.5s*/
   transition: 0.5s;
@@ -458,7 +469,7 @@ span{
 }
 .education-content .content .year{
   font-size: 1.5rem;
-  color: darkgreen;
+  color: #282623;
   padding-bottom: .5rem;
 }
 /*Target education content container and year*/
@@ -504,7 +515,7 @@ span{
   width: 100%;
   height: auto;
   max-width: 100%;
-  border: 2px solid rgb(0, 255, 17);
+  border: 2px solid rgb(136,135, 137);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgb(0,0,0,0.1);
 }
@@ -575,7 +586,7 @@ span{
   left: 0;
   width: 0;
   height: 100%;
-  background:rgb(49, 168, 49);
+  background:rgb(80, 84, 87);
   z-index: -1;
   transition:.5s ;
 }
@@ -605,7 +616,7 @@ width: 100%; /* Set width to 100% on hover */
 .skills-content .progress .bar{
   height: 2.5rem;
   border-radius: .6rem;
-  border: .2rem solid var(--main-color);
+  border: .2rem solid white;
   padding: .5rem;
   margin: 1rem 0;
 }
@@ -614,7 +625,7 @@ width: 100%; /* Set width to 100% on hover */
   display: block;
   height: 100%;
   border-radius: .3rem;
-  background:darkgreen;
+  background: #575757;
 }
 /* Select the first skills column */
 .skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span{
@@ -653,6 +664,7 @@ width: 100%; /* Set width to 100% on hover */
 .contact{
   min-height: auto;
   padding-bottom: 7rem;
+  text-align: center;
 }
 .contact form{
   max-width: 70rem;
@@ -679,7 +691,7 @@ width: 100%; /* Set width to 100% on hover */
   color: var(--text-color);
   background: transparent;
   border-radius: .4rem;
-  border: .2rem solid var(--main-color);
+  border: .2rem solid rgb(50, 46, 46);
 }
 /* Set placeholder text color for input and textarea */
 .contact form .input-box .input-field input::placeholder,
@@ -700,7 +712,7 @@ width: 100%; /* Set width to 100% on hover */
   height: 100%;
   
 /* Background color of the focus element */
-  background:green;
+  background:#292B2A;
   
 /* Border radius of the focus element */
   border-radius: .6rem;
@@ -770,7 +782,7 @@ width: 100%;
   /* Padding for space around */
   padding: .8rem;
    /* Background color */
-  background: var(--main-color);
+  background: white;
   /* Border properties */
   border: .2rem solid var(--main-color);
   border-radius: .6rem;
@@ -792,7 +804,7 @@ width: 100%;
     /* Sets width and height to 0 */
   height: 100%;
   /* Sets background color */
-  background:darkgreen;
+  background: #2c2c2c;;
    /* Sets z-index to -1 */
   z-index: -1;
     /* Sets transition time to.5s */
@@ -896,7 +908,7 @@ width: 50%;/* Set width to 50% */
     left:-100;
     width: 100%;
     height: 100%;
-    background: yellowgreen;
+    background: #7c7c7c;
     border-top: .1rem solid rgb(0,0,0,.2);
     z-index: -1;
     transition: .25s ease;
@@ -1048,4 +1060,4 @@ width: 50%;/* Set width to 50% */
   100%{/* Applies to the last frame of the animation */
     width: 0;/* Sets the width to 0 at the end of the animation */
   }
-} 
+}  
