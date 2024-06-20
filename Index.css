@@ -11,7 +11,7 @@
 }
 /*define background color*/
 :root {
-  --bg-color:black;
+  --bg-color:#040404;
   /*define secondary background color*/
   --second-bg-color:rgb(38, 38, 38);
   /*define second background color*/
@@ -55,7 +55,7 @@ body {
 }
 /* Set background to value of --bg-color */
 .header .sticky{
-  background:var(--bg-color);
+  background:var(--second-bg-color);
 
 }
 /* Logo styling with font-size, color, and font-weight */
@@ -84,7 +84,7 @@ body {
 /*active state for current page lin*/
 .navbar a.active {
   /*set main color to hovered/active links*/
-  color: var(--main-color);
+  color: rgb(93, 92, 92);
 }
 /* Position relative for menu icon */
 #menu-icon {
