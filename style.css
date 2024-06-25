@@ -31,7 +31,7 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   /*text color to white*/
-  color: white;
+  color: rgb(172, 168, 168);
 }
 /*Position element relative to viewport*/
 .header {
@@ -372,121 +372,139 @@ span{
 .btn-box.btns a::before{
   background: #B9B8B6;
 }
-.education{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: auto;
-  padding-bottom: 5rem;
-  border: 1px solid black;
-
+/* General styles for the education section */
+.education {
+  padding: 20px;
+  background-color: rgb(0, 0, 0);
+  text-align: center;
 }
 
-.education .education-row{
+.education .heading {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color:white;
+}
+
+.education .heading span {
+  color: #343434;
+}
+
+/* Styles for the education row and columns */
+.education-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 5rem;
-  border: 1px solid black;
-
-
-}
-.education-row  .education-column{
-  flex: 1 1 40rem;
-  border: 1px solid black;
-
-}
-.education-column .title{
-  position: relative;
-  display: inline-block;
-  font-size: 2.5rem;
-  margin: 0 0 1.5rem 2rem;
-}
-.education-column .education-box{
-  position: relative;
-  border-left: .2rem solid #525252;
-}
-.education-box .education-content{
-  position: relative;
-  padding-left: 0.5rem;
-  border: 1px solid black;
+  justify-content: center;
+  gap: 20px;
 }
 
-
-/* Adds content before education-content class */
-.education-box .education-content::before{
-  content: '';
-  /* Sets position to absolute */
-  position: absolute;
-   /* Positions content at top left of education-content */
-  top: 0;
-  left: -1.1rem;
-  /*set width and height to 2rem*/
-  width: 2rem;
-  height: 2rem;
-  /*sets background color to main-color variable*/
-  background-color: #DAD9D8;
-  /*rounds corners to create circle*/
-  border-radius: 50% ;
+.education-column {
+  flex: 1;
+  max-width: 45%;
+  min-width: 300px;
 }
-/*define class education-content and content*/
-.education-content .content{
-  /*ADD position to relative*/
-  position: relative;
-  /*add padding 1.5rem*/
-  padding: 1.5rem;
-  border: .2rem solid #525252;
-  /*Add border-radius .6rem*/
-  border-radius: .6rem;
-  /*Add margin-bottom 2rem*/
-  margin-bottom: 2rem;
-  /*Add overflow hidden*/
+
+/* Styles for the education box and content */
+.education-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.education-content {
+  background-color: #656363; 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.816);
+  transition: transform 0.3s, box-shadow 0.3s;
   overflow: hidden;
+  cursor: pointer;
+  padding: 20px;
+}
 
+.education-content .content {
+  text-align: left;
 }
-/*set content empty string*/
-.education-content .content::before{
-  content: ' ';
-  /*Position absolute*/
-  position: absolute;
-  /*top 0, left 0*/
-  top: 0;
-  left: 0;
-  /*set width to 0 , and height to 100%*/
-  width: 0;
-  height: 100%;
-  /*background color green*/
-  background:#282623;
-  z-index: -1;
-  /*transation to 0.5s*/
-  transition: 0.5s;
-}
-/*target education content*/
 
-.education-content .content:hover::before{
-  /*set the width to full*/
-  width: 100%;
+.education-content .year {
+  font-size: 0.9em;
+  color: #007bff;
+  margin-bottom: 10px;
 }
-.education-content .content .year{
-  font-size: 1.5rem;
-  color: #282623;
-  padding-bottom: .5rem;
-}
-/*Target education content container and year*/
-.education-content .content .year i{
-  padding-right: .5rem;
-}
-/*set font size to 2rem*/
-.education-content .content h3{
-  font-size: 2rem;
 
+.education-content h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
 }
-/*set font size for paragraphs in.education-content*/
-.education-content .content p{
-  font-size: 1.6rem;
-  /*Add padding to the top of paragraphs*/
-  padding-top: .5rem;
+
+.education-content p {
+  font-size: 1em;
+  color: white;
 }
+
+.education-content .link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.education-content .link:hover {
+  text-decoration: underline;
+}
+
+/* Hover effect for education content */
+.education-content:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation for card effect */
+@keyframes cardHover {
+  from {
+      transform: scale(1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  to {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.education-content:hover {
+  animation: cardHover 0.3s forwards;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .education-column {
+      max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-content {
+      padding: 15px;
+  }
+
+  .education-content .year {
+      font-size: 0.8em;
+  }
+
+  .education-content h3 {
+      font-size: 1.2em;
+  }
+
+  .education-content p {
+      font-size: 0.9em;
+  }
+
+  .education-content .link {
+      font-size: 0.9em;
+  }
+}
+  
+
 /*Projet section styling*/
 .Project{
   padding: 50px 0;
@@ -967,37 +985,63 @@ width: 50%;/* Set width to 50% */
   .contact form .input-box .input-field{
     width: 100%;
   }}
-  
-  .certification{
-    /**/
-    padding: 50px 0;
-    background-color:var(--bg-color);
-    text-align: center;
-    
-  }
-  .certification .heading{
-    font-size: 36px;
-    font-weight: 700;
-    color:white;
-    margin-bottom: 50px;
-  }
-  .certification .img{
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    flex-wrap: wrap;
-  }
-  .certification .img img{
-    width: 200px;/*Adjust the width as needed*/
-    height: 200px;/*set the height */
-    object-fit: cover;/*this ensure image covers the container*/
-    margin: 20px;/*adjust spacing between image*/
-    border-radius: 10px;/*optional add border radius for rounded corners*/
-  }
-  
+/* General styles for the certification section */
+.certification {
+  padding: 20px;
+  background-color:rgb(0, 0, 0);
+  text-align: center;
+}
 
+.certification .heading {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
 
-  
+/* Styles for the image container */
+.certification .img {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Styles for individual images */
+.certification .img img {
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+  cursor: pointer;
+  border: 2px solid transparent; /* Start with a transparent border */
+}
+
+/* Hover effect for images */
+.certification .img img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-color:rgb(198, 193, 193); /* Change border color on hover */
+}
+
+/* Click effect for images */
+.certification .img img:active {
+  border-color: #ffd900f8;
+  box-shadow: 0 0 10px rgba(255, 217, 0, 0.566);
+  animation: glow 0.6s forwards;
+}
+
+/* Animation for glow effect */
+@keyframes glow {
+  0% {
+    border-color: transparent;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    border-color: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+}
+  /*styling the footer*/
   .footer{
     
     flex-direction: column-reverse;
