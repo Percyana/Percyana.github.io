@@ -33,6 +33,7 @@ body {
   /*text color to white*/
   color: rgb(172, 168, 168);
 }
+
 /*Position element relative to viewport*/
 .header {
   position: fixed;
@@ -66,19 +67,60 @@ body {
   text-shadow: #282623;
   font-weight: 600; /* Font weight of 600 (semi-bold) */
 }
+/* Navigation styling with flexbox */
 .navbar{
-    /* Set navbar position to relative value */
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 2rem;
+  background-color: transparent;
+  color: #fffdf9;
+  
+
 }
 
 .navbar a {
   /* Define style for links in navbar */
   font-size: 1.7rem;  /* Adjust font size */
-  color: var(--text-color);
+  color: gray;
+  text-decoration: none; /* Remove underline */
+  display: inline-block;
   font-weight: 500; /* Set font weight */
   margin-left: 3.5rem;; /* Set left margin */
   transition: .3s;/* Add transition effect */
 }
+.bx-menu{
+  display: none;
+  font-size: 24px;
+  color: #fffdf9;
+  cursor: pointer;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+  .navbar {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .navbar a {
+      text-align: center;
+      padding: 10px;
+      border-top: 1px solid #444;
+  }
+
+  .bx-menu {
+      display: block;
+  }
+}
+
+/* Show navbar when active */
+.navbar.active {
+  display: flex;
+}
+
 /*hover effect  to navbar links*/
 .navbar a:hover,
 /*active state for current page lin*/
@@ -96,6 +138,81 @@ body {
   cursor: pointer;
     /* Display property for menu icon */
   display: none;
+}
+/* Media query for responsive design */
+@media (max-width: 768px) {
+  /* Show menu icon on smaller screens */
+  #menu-icon {
+    display: block;
+    }
+    .navbar{
+      position: fixed;
+      top: 0;
+      left: -100;
+      width: 100%;
+      height: 100vh;
+      background-color:var(--bg-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: left 0.3s ease;
+      }
+  
+
+    }
+    .navbar a {
+      font-size: 2.5rem;
+      margin: 1rem;
+      }
+      .navbar a:hover,
+      .navbar a.active {
+        color: var(--text-color);
+        }
+        .nav-active {
+          left: 0;
+          }
+          .nav-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2.5rem;
+            cursor: pointer;
+            }
+            .nav-close:hover {
+              color: var(--text-color);
+              }
+              
+
+#menu-icon.active{
+  transform: rotate(180deg);
+}
+
+
+/* Dropdown styles */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  display: none; /* Initially hide dropdown */
+}
+
+.navbar:hover .dropdown {
+  display: block; /* Show dropdown on hover */
+}
+
+.dropdown a {
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown a:hover {
+  background-color: #f9f9f9;
 }
 /* Section minimum height and padding */
 section {
